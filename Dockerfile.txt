@@ -1,5 +1,7 @@
 FROM rocker/shiny:3.5.1
 
+RUN apt-get update && apt-get install -y locales && locale-gen en_US.UTF-8
+
 RUN apt-get update && apt-get install libgdal-dev libpq-dev libudunits2-dev libproj-dev libssl-dev libcurl4-openssl-dev libv8-3.14-dev -y &&\
   mkdir -p /var/lib/shiny-server/bookmarks/shiny
 
